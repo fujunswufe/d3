@@ -16,6 +16,7 @@
 1. I Strongly recommend you to use Chrome. Firefox is also fine. 
 2. For Chrome users, click on top right to find ```more tools``` and click ```Developer Tools```.
 3. There is a console in the bottom of the browser, you can use this console to debug your js and d3.js if you have bugs in your code. 
+4. here is the screen shot ![screenshot](https://github.com/fujunswufe/d3/blob/master/lesson1/developer.png)
 
 ####Fundamentals
 1. HTML 
