@@ -33,3 +33,52 @@
     </body>
 </html>
 ```
+2. DOM
+	1. [The Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is a cross-platform and language-independent application programming interface that treats an HTML, XHTML, or XML document as a tree structure wherein each node is an object representing a part of the document.
+	2. In the above HTML, head is the parent element to title. All elements on this page are descendants of html.
+
+3. CSS
+	* [Cascading Style Sheets (CSS)](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) is a style sheet language used for describing the presentation of a document written in a markup language.
+	* A simple css stylesheet looks like this
+	```css
+	body {
+	    background-color: white;
+	    color: red;
+	}
+	```
+	* CSS consists of selectors and rules. CSS Selectors find specific elements to which styles would be applied
+	```css
+	h1          /* Selects level 1 headings              */
+	p           /* Selects paragraphs                    */
+	.caption    /* Selects elements with class "caption" */
+	#subnav     /* Selects element with ID "subnav"      */
+	```
+	*  CSS selectors and rules use curly brackets
+	```css
+	p {
+	    font-size: 12px;
+	    line-height: 14px;
+	    color: black;
+	}
+	```
+	* CSS rules can be contained in the head of a document or saved in an external file with a .css file, and referenced in the HTML's head.
+4. [SVG](http://www.w3schools.com/svg/default.asp)
+	1. SVG stands for Scalable Vector Graphics
+	2. SVG is used to define vector-based graphics for the Web
+	3. SVG defines the graphics in XML format
+	4. SVG graphics do NOT lose any quality if they are zoomed or resized
+	5. SVG in HTML 5
+	```html
+	<!DOCTYPE html>
+	<html>
+		<body>
+		
+			<h1>My first SVG</h1>
+			
+			<svg width="100" height="100">
+			  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+			</svg>
+		
+		</body>
+	</html>
+	```
