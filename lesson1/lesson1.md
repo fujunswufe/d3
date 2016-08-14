@@ -22,17 +22,18 @@
 1. HTML 
 	* Hypertext Markup Language is used to structure content for web browsers
 	* A very simple HTML file can be like this 
-```html
-<html>
-    <head>
-        <title>Test</title>
-    </head>
-    <body>
-        <h1>Test</h1>
-        <p>Hello world!</p>
-    </body>
-</html>
-```
+	
+	```html
+	<html>
+	    <head>
+	        <title>Test</title>
+	    </head>
+	    <body>
+	        <h1>Test</h1>
+	        <p>Hello world!</p>
+	    </body>
+	</html>
+	```
 2. DOM
 	1. [The Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is a cross-platform and language-independent application programming interface that treats an HTML, XHTML, or XML document as a tree structure wherein each node is an object representing a part of the document.
 	2. In the above HTML, head is the parent element to title. All elements on this page are descendants of html.
