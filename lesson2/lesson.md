@@ -79,7 +79,7 @@
 				{name: "Mike", 	 age: 17},
 				{name: "Lynn",	 age: 16}
 			];
-			
+			// this is an anomynous function, function(d)
 			var studentsMinAge = d3.min(students, function(d){
 				return d.age;
 			});
