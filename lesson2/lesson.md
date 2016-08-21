@@ -2,7 +2,8 @@
 1. Let's now write some examples of Javascript arrays and objects
   1. For Javascript array, the index start at 0, use '[]' to denote an array
   2. For Javascript object, it consists of key and value, use '{}' to denote an object. It's something __HashMap__ in data structure.
-  3. You can try to copy the code below into a html file. And open it chrome with developer tools. And use the below console. Be sure that using a local host to open the file. 
+  3. We will try to write some filter functions for arrays and objects in the code below
+  4. You can try to copy the code below into a html file. And open it chrome with developer tools. And use the below console. Be sure that using a local host to open the file. 
   ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +15,15 @@
 	</head>
 	<body>
 		<script>
-			var data = [132,71,337,93,78,43,20];
+			var data = [132,71,337,40,93,78,90,43,20];
 			//console.log(data[2]), console.log will print 337 because the index of Javascript start at 0
+			
+			var dataGreater50 = data.filter(function(num){
+				return num > 50;
+			}); // this will create an array with numbers greater than 50
 
 			var student = {name: "Tom", age: 20}; // this is a single Javascript object
-			//console.log(student.name, student.age);
+			// console.log(student.name, student.age);
 
 			var students = [
 				{name: "Tom", 	 age: 20},
@@ -27,6 +32,10 @@
 				{name: "Lynn",	 age: 16}
 			];
 			//console.log(students[1].name, student[1].age);
+			
+			var studentsAgeGreaterThan18 = students.filter(function(student){
+				return student.age > 50;
+			});
 			
 			// use a for loop to print the information in students
 			for(var i = 0, len = students.length; i < len; i++){
