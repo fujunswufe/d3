@@ -1,9 +1,9 @@
 ###Review of Javascript Arrays and Objects
 1. Let's now write some examples of Javascript arrays and objects
-  1. For Javascript array, the index start at 0, use '[]' to denote an array
+  1. For Javascript array, the index starts at 0, use '[]' to denote an array
   2. For Javascript object, it consists of key and value, use '{}' to denote an object. It's something __HashMap__ in data structure.
   3. We will try to write some filter functions for arrays and objects in the code below
-  4. You can try to copy the code below into a html file. And open it chrome with developer tools. And use the below console. Be sure that using a local host to open the file. 
+  4. You can try to copy the code below into a html file. And open it in _chrome_ with developer tools. And use the below console. Be sure that using a local host to open the file. 
   ```HTML
 <!DOCTYPE html>
 <html lang="en">
