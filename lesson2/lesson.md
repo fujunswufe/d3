@@ -1,7 +1,8 @@
 ###Review of Javascript Arrays and Objects
 1. Let's now write some examples of Javascript arrays and objects
   1. For Javascript array, the index start at 0, use '[]' to denote an array
-  2. For Javascript object, it consists of key and value, use '{}' to denote an object. It's something __HashMap__ in data structure. 
+  2. For Javascript object, it consists of key and value, use '{}' to denote an object. It's something __HashMap__ in data structure.
+  3. You can try to copy the code below into a html file. And open it chrome with developer tools. And use the below console. Be sure that using a local host to open the file. 
   ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -16,23 +17,23 @@
 			var data = [132,71,337,93,78,43,20];
 			//console.log(data[2]), console.log will print 337 because the index of Javascript start at 0
 
-			var Student = {name: "Tom", age: 20};
-			//console.log(.key, donut.value);
+			var student = {name: "Tom", age: 20}; // this is a single Javascript object
+			//console.log(student.name, student.age);
 
-			var donuts = [
-				{key: "Glazed", 	value: 132},
-				{key: "Jelly", 		value: 71},
-				{key: "Holes", 		value: 337},
-				{key: "Sprinkles",	value: 93}
+			var students = [
+				{name: "Tom", 	 age: 20},
+				{name: "Jenny",  age: 19},
+				{name: "Mike", 	 age: 17},
+				{name: "Lynn",	 age: 16}
 			];
-			//console.log(donuts[1].key, donuts[1].value);
+			//console.log(students[1].name, student[1].age);
 
-			for(var i = 0, len = donuts.length; i < len; i++){
-				console.log(donuts[i].key, donuts[i].value);
+			for(var i = 0, len = students.length; i < len; i++){
+				console.log(students[i].name, student[i].age);
 			}
 
-			donuts.forEach(function(entry){
-				console.log(entry.key, entry.value);
+			students.forEach(function(entry){ // this is anonymous functiom
+				console.log(entry.name, entry.age);
 			});
 		</script>	
 	</body>
