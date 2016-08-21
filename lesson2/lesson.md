@@ -21,8 +21,9 @@
 			var dataGreater50 = data.filter(function(num){
 				return num > 50;
 			}); // this will create an array with numbers greater than 50
-
-			var student = {name: "Tom", age: 20}; // this is a single Javascript object
+			
+			// this is a single Javascript object, name and age are "keys", and Tom and 20 are "values"
+			var student = {name: "Tom", age: 20}; 
 			// console.log(student.name, student.age);
 
 			var students = [
@@ -45,6 +46,50 @@
 			students.forEach(function(entry){ 
 				console.log(entry.name, entry.age);
 			});
+		</script>	
+	</body>
+</html>
+  ```
+###Introduction to d3 functions
+1. Now I will write some basic useful d3 functions. There are too many functions in d3.js and you can't remember them all. The the most efficient way is to use [API](https://github.com/d3/d3/blob/master/API.md) when you need some d3 fucntions. 
+  ```HTML
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Learning D3</title>
+		<!-- 	<link rel="stylesheet" href="main.css"> -->
+		<script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	</head>
+	<body>
+		<script>
+			var data = [132,71,337,40,93,78,90,43,20];
+			// compute the minimum value in an array.
+			var dataMin = d3.min(data);
+			// compute the maximum value in an array.
+			var dataMax = d3.max(data);
+			// compute the minimum and maximum value in an array
+			var dataLowHigh = d3.extent(data); 
+			
+			console.log(dataMin, dataMax, dataLowHigh);
+
+			var students = [
+				{name: "Tom", 	 age: 20},
+				{name: "Jenny",  age: 19},
+				{name: "Mike", 	 age: 17},
+				{name: "Lynn",	 age: 16}
+			];
+			
+			var studentsMinAge = d3.min(students, function(d){
+				return d.age;
+			});
+			var studentsMaxAge = d3.max(students, function(d){
+				return d.age;
+			});
+			var studentsLowHighAge = d3.extent(students, function(d){
+				return d.age;
+			});
+			console.log(studentsMinAge, studentsMaxAge, studentsLowHighAge);
 		</script>	
 	</body>
 </html>
