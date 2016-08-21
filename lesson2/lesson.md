@@ -27,12 +27,13 @@
 				{name: "Lynn",	 age: 16}
 			];
 			//console.log(students[1].name, student[1].age);
-
+			
+			// use a for loop to print the information in students
 			for(var i = 0, len = students.length; i < len; i++){
 				console.log(students[i].name, student[i].age);
 			}
-
-			students.forEach(function(entry){ // this is anonymous functiom
+			// use an anonymous functiom to print each object in students
+			students.forEach(function(entry){ 
 				console.log(entry.name, entry.age);
 			});
 		</script>	
