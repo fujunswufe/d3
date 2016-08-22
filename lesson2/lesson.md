@@ -98,6 +98,7 @@
 3. append a "p" element at the end of select. "p" represents a paragraph in html tag.
 4. set the content of that "p" to "Hello World"
 5. Cheers. We already use d3 function to create a DOM element.
+
 	```html
 	<!DOCTYPE html>
 	<html lang="en">
