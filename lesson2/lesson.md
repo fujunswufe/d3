@@ -119,6 +119,7 @@
 	    </body>
 	</html>
 	```
+
 ###Chain Methods in d3.js
 1. The chain methods of d3.js can perform several functions in a single line of code
 2. __d3__ reference the d3 object
