@@ -49,6 +49,7 @@
 	</body>
 </html>
   ```
+
 ###Introduction to d3 functions
 1. Now I will write some basic useful d3 functions. There are too many functions in d3.js and you can't remember them all. The the most efficient way is to use [API](https://github.com/d3/d3/blob/master/API.md) when you need some d3 fucntions. 
   ```html
@@ -92,6 +93,7 @@
 	</body>
 </html>
   ```
+
 ###Add DOM elements using d3 functions
 1. Next we will try to use d3 to create a DOM element. Normally, we should use d3 to create a SVG elements to decorate a visualization object. However, this time we start from an easy example.
 2. First we use d3.select method to select an DOM element. In the code below, we select the DOM "body"
