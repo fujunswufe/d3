@@ -109,8 +109,26 @@
 	    </head>
 	    <body>
 	        <script type="text/javascript">
+	       		// you can delete "//" below, save it and refresh. Wow, the browser will show "Hello World"
 				// d3.select("body").append("p").text("Hello World");
 	        </script>
 	    </body>
 	</html>
+	```
+###Chain Methods in d3.js
+1. The chain methods of d3.js can perform several functions in a single line of code
+2. __d3__ reference the d3 object
+3. Given ```select()```, this is a CSS selector. It will select the first matching DOM element. In this line of code, we select "body". Thus a reference to "body" is passed to next function in the chain. As notice, we can use ```selectAll()``` to select all the mactching DOM elements
+4. ```append``` creates whatever new DOM element we specify and add inside the ```select``` DOM element at the end of it. In this case, we pass ```p``` as the input argument.
+5. ```text()``` receives a string and inserts it between the starting and ending tags of the current selection. Because the previous function receives ```"p"``` as the argument, the string would insert between ```<p>``` and ```</p>```.
+
+	```Javascript
+	// this line of code looks very nice
+	d3.select("body")  
+	  .append("p")
+	  .text("Hello World")
+	
+	var body = d3.select("body") // However, these three lines of code are a little messy
+	var p = body.append("p")
+	p.text("Hello World")
 	```
