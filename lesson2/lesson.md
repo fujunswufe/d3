@@ -4,13 +4,12 @@
   2. For Javascript object, it consists of key and value, use '{}' to denote an object. It's something __HashMap__ in data structure.
   3. We will try to write some filter functions for arrays and objects in the code below
   4. You can try to copy the code below into a html file. And open it in _chrome_ with developer tools. And use the below console. Be sure that using a local host to open the file. 
-  ```HTML
+  ```html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>Learning D3</title>
-		<!-- 	<link rel="stylesheet" href="main.css"> -->
 		<script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	</head>
 	<body>
@@ -52,13 +51,12 @@
   ```
 ###Introduction to d3 functions
 1. Now I will write some basic useful d3 functions. There are too many functions in d3.js and you can't remember them all. The the most efficient way is to use [API](https://github.com/d3/d3/blob/master/API.md) when you need some d3 fucntions. 
-  ```HTML
+  ```html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>Learning D3</title>
-		<!-- 	<link rel="stylesheet" href="main.css"> -->
 		<script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 	</head>
 	<body>
@@ -94,3 +92,25 @@
 	</body>
 </html>
   ```
+###Add DOM elements using d3 functions
+1. Next we will try to use d3 to create a DOM element. Normally, we should use d3 to create a SVG elements to decorate a visualization object. However, this time we start from an easy example.
+2. First we use d3.select method to select an DOM element. In the code below, we select the DOM "body"
+3. append a "p" element at the end of select. "p" represents a paragraph in html tag.
+4. set the content of that "p" to "Hello World"
+5. Cheers. We already use d3 function to create a DOM element.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 function</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+			// d3.select("body").append("p").text("Hello World");
+        </script>
+    </body>
+</html>
+```
