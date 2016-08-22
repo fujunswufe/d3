@@ -1,3 +1,5 @@
+##Lesson 2 Introduction to d3.js and Review of Javascript
+
 ###Review of Javascript Arrays and Objects
 1. Let's now write some examples of Javascript arrays and objects
   1. For Javascript array, the index starts at 0, use '[]' to denote an array
