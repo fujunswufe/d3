@@ -16,13 +16,26 @@
 5. ```.append("p")```: reference the placeholder element created by ```enter()``` and inserts a ```p``` element into the DOM. ```p``` is paragraph element in HTML
 6. ```.text("Hello world")```: takes the reference to the new created ```p``` DOM element and inserts ```Hello world```
 
-```javascript
-var dataset = [1, 2, 3, 4, 5];
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning D3</title>
+    <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <script>
+        var dataset = [1, 2, 3, 4, 5];
+        
+        d3.select("body")
+          .selectAll("p")
+          .data(dataset)
+          .enter()
+          .append("p")
+          .text("Hello world");
+    </script>   
+</body>
+</html>  
 
-d3.select("body")
-  .selectAll("p")
-  .data(dataset)
-  .enter()
-  .append("p")
-  .text("Hello world");
 ```
