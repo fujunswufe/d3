@@ -15,6 +15,7 @@
 4. ```.enter()```. In order to create new, data-bounded DOM elements, we must use ```enter()``` in d3 functions. This method will look at the selected DOM elements. If the number of data in the dataset is bigger than the number of selected DOM elements, ```enter()``` will create a new placeholder element on which you may work on your own. And then points a reference to this new placeholder element to the following next step. 
 5. ```.append("p")```: reference the placeholder element created by ```enter()``` and inserts a ```p``` element into the DOM. ```p``` is paragraph element in HTML
 6. ```.text("Hello world")```: takes the reference to the new created ```p``` DOM element and inserts ```Hello world```
+7. The next step is to load the below html page in your browser. Remember to start your localhost server. Wow, you would see five paragraphs. 
 
 ```html
 <!DOCTYPE html>
