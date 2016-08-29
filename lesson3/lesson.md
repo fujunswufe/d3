@@ -42,8 +42,71 @@
 ```
 ####Different types of data
 1. variables
+    1. A variable is the smallest building block of data
+    2. In javascript, we need to use ```var``` to declare variable
+    ```javascript
+    var visited = false
+    var num = 50
+    var digitNum = 3.1415926
+    var text = "Hello world"
+    // how to change value of a variable ins Javascript
+    var value = 100
+    value = true
+    value = 1.1111
+    value = "Let's learn d3.js"
+    ```
 2. arrays
+    1. Use hard brackets __[]__ indicate an array
+    2. An array is a list of values. In javascript, index of javascript starts at 0.
+    3. An array can contain different types of values, for example strings and objects. 
+    ```javascript
+    var nums = [1, 10, 100, 1000]
+    nums[0] // this will return 1
+    nums[3] // this will return 1000
+    
+    var strs = ["Windows", "Mac OS", "Linux", "Unix"]
+    ```
 3. objects
+    1. Use curly brackets {} to indicate an object. 
+    2. Inside the brackets, we include indices and values.
+    3. To get each value, we use dot notation with the name of the index
+    ```javascript
+    var student = {
+        age: 21,
+        gender: "male",
+        major: "Computer Science",
+        full_time: true
+    };
+    // reference the value of the object
+    student.age // return 21
+    student.gender // return "male"
+    student.major // return "Computer Science"
+    student.full_time // return true
+    ```
 4. Objects + Arrays
+    1. We can use the above two data structures to create arrays of objects.
+    2. We use hard brackets [] on the outside to indicate an array,  and followed by curly brackets {} to indicate an object and each object separated by a comma.
+    ```
+    var students = [
+        {
+            age: 21,
+            gender: "male",
+            major: "Computer Science",
+            full_time: true
+        }, 
+         {
+            age: 18,
+            gender: "female",
+            major: "Fiance",
+            full_time: false
+        },
+        {
+            age: 24,
+            gender: "male",
+            major: "Statistics",
+            full_time: true
+        }
+    ]
+    ```
 5. JSON
 6. GeoJSON
