@@ -106,13 +106,43 @@
             major: "Statistics",
             full_time: true
         }
-    ]
+    ];
     
     students[0] // return first object of the students array
     students[1].age // return 18
-    students[1].genger // return female
+    students[1].gender // return female
     students[1].major  // return Finance
     students[1].full_time // return false
     ```
 5. JSON
+    1. JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+    2. If you want to learn more details about JSON, go to this [website](http://www.json.org)
+    3. The only difference between JSON and an javascript object is that the indices are surrounded by double quotation marks ```""```, making them as string values.
+    ```JSON
+    var studentJSON = {
+        "age": 24,
+        "gender": "male",
+        "major": "Statistics",
+        "full_time": true
+    };
+    ```
 6. GeoJSON
+    1. GeoJSON is a format for encoding a variety of geographic data structures. A GeoJSON object may represent a geometry, a feature, or a collection of features. GeoJSON supports the following geometry types: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, and GeometryCollection. Features in GeoJSON contain a geometry object and additional properties, and a feature collection represents a list of features. _Reference_ from [geojson.org](http://geojson.org/geojson-spec.html)
+    2. A simple GeoJSON data is below. We will use GeoJSON to create our choropleth. 
+    ```javascript
+    var geodata = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [ 150.1282427, -24.471803 ]
+                },
+                "properties": {
+                    "type": "town"
+                }
+            }
+        ]
+    }; 
+    ```
