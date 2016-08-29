@@ -86,7 +86,7 @@
 4. Objects + Arrays
     1. We can use the above two data structures to create arrays of objects.
     2. We use hard brackets [] on the outside to indicate an array,  and followed by curly brackets {} to indicate an object and each object separated by a comma.
-    ```
+    ```javascript
     var students = [
         {
             age: 21,
@@ -107,6 +107,12 @@
             full_time: true
         }
     ]
+    
+    students[0] // return first object of the students array
+    students[1].age // return 18
+    students[1].genger // return female
+    students[1].major  // return Finance
+    students[1].full_time // return false
     ```
 5. JSON
 6. GeoJSON
