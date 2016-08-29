@@ -40,3 +40,10 @@
 </html>  
 
 ```
+####Different types of data
+1. variables
+2. arrays
+3. objects
+4. Objects + Arrays
+5. JSON
+6. GeoJSON
