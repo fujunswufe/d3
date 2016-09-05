@@ -3,6 +3,7 @@
 1. Bar charts are essentially rectangles, and can be drawed with ```<div>``` in HTML. Below is a sample code for drawing a bar chart.
 2. Because this is a ```div```, the width and height can be written in ```CSS``` style.
 ```HTML
+<!-- a sample code for drawing a bar chart-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +19,9 @@
 </body>
 </html>  
 ```
-3. ```CSS``` style for ```div```
+
 ```CSS
+<!--CSS style for div-->
 div.bar {
     display: inline-block;
     width: 30px;
