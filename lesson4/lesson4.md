@@ -41,7 +41,9 @@ div.bar {
 3. Some examples for attributes and values
     * src is the attribute and "w3schools.jpg" is the value
     * width is the attribute and "104" is the value
+    * class is the attribute and "bar" is the value
 ```HTML
 <img src="w3schools.jpg" width="104" height="142">
+<div class="bar"></div>
 ```
     
