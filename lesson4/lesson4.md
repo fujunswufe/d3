@@ -15,9 +15,10 @@
 </head>
 <body>
   <div style="display: inline-block;
-          width: 30px;
-          height: 100px;
-          background-color: black;"></div>
+	  width: 30px;
+	  height: 100px;
+	  background-color: black;">
+  </div>
 </body>
 </html>  
 ```
