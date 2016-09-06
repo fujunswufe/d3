@@ -46,7 +46,7 @@ div.bar {
 <div class="bar"></div>
 ```
 ####3. Create bar charts using d3.js
-1. Sample d3 code for bar charts. We could use the Chrome inspector to find that there are five bars, each of them generated from the ```dataset```. However, the below chunk of code will show nothing on the display of the webpage.
+1. Sample d3 code for bar charts. We could use the Chrome inspector to find that there are five bars, each of them generated from the ```dataset```.
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -89,36 +89,37 @@ div.bar {
 	    	return d * 20 + "px";
 		});
 	```
-	* The above method does not look so nice. So we need to add margin to make the bar chart look nice. This could be written in CSS style. ```CSS margin-right: 2px;```
-	```HTML
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <title>Learning D3</title>
-	    <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-	    <style type="text/css">
-			div.bar {
-				display: inline-block;
-				width: 30px;
-				height: 70px;
-				background-color: black;
-				margin-right: 4px;
-			}
-		</style>
-	</head>
-	<body>
-	    <script>
-	        var dataset = [1, 2, 3, 4, 5];
-	        d3.select("body").selectAll("div")
-	            .data(dataset)
-	            .enter()
-	            .append("div")
-	            .attr("class", "bar")
-	            .style("height", function(d) {
-	    			return d * 20 + "px";
-				});
-	    </script>
-	</body>
-	</html>  
-	```
+	* For above code, we scale the height by 20. Plus px which is the unit of pixels. Thus the height of each bar is 20px, 40px, 60px, 80px, 100px.
+3. The above method does not look so nice. So we need to add margin to make the bar chart look nice. We can add some space between each bar. This could be written in CSS style. ```CSS margin-right: 2px;```
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning D3</title>
+    <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <style type="text/css">
+		div.bar {
+			display: inline-block;
+			width: 30px;
+			height: 70px;
+			background-color: black;
+			margin-right: 4px;
+		}
+	</style>
+</head>
+<body>
+    <script>
+        var dataset = [1, 2, 3, 4, 5];
+        d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d) {
+    			return d * 20 + "px";
+			});
+    </script>
+</body>
+</html>  
+```
