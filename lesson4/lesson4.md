@@ -23,7 +23,6 @@
 ```
 
 ```CSS
-<!-- CSS style for div-->
 div.bar {
     display: inline-block;
     width: 30px;
@@ -46,9 +45,8 @@ div.bar {
 <img src="w3schools.jpg" width="104" height="142">
 <div class="bar"></div>
 ```
-
-####3. Create bar charts using d3
-1. Sample d3 code for bar charts. We could use the Chrome inspector to find that there are five bars, each of them generated in ```dataset```.
+####3. Create bar charts using d3.js
+1. Sample d3 code for bar charts. We could use the Chrome inspector to find that there are five bars, each of them generated from the ```dataset```. However, the below chunk of code will show nothing on the display of the webpage.
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -56,10 +54,19 @@ div.bar {
     <meta charset="UTF-8">
     <title>Learning D3</title>
     <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <style type="text/css">
+			div.bar {
+				display: inline-block;
+				width: 30px;
+				height: 70px;
+				margin-right: 4px;
+				background-color: black;
+			}
+		</style>
 </head>
 <body>
-    <srcipt>
-        var dataset = [ 5, 10, 15, 20, 25 ];
+    <script>
+        var dataset = [1, 2, 3, 4, 5];
         d3.select("body").selectAll("div")
             .data(dataset)
             .enter()
@@ -69,3 +76,4 @@ div.bar {
 </body>
 </html>  
 ```
+####4. Setting CSS style for div using d3.js
