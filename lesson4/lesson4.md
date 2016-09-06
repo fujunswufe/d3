@@ -46,4 +46,26 @@ div.bar {
 <img src="w3schools.jpg" width="104" height="142">
 <div class="bar"></div>
 ```
-    
+
+####3. Create bar charts using d3
+1. Sample d3 code for bar charts. We could use the Chrome inspector to find that there are five bars, each of them generated in ```dataset```.
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning D3</title>
+    <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <srcipt>
+        var dataset = [ 5, 10, 15, 20, 25 ];
+        d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "bar");
+    </script>
+</body>
+</html>  
+```
