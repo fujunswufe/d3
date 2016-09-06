@@ -55,14 +55,13 @@ div.bar {
     <title>Learning D3</title>
     <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <style type="text/css">
-			div.bar {
-				display: inline-block;
-				width: 30px;
-				height: 70px;
-				margin-right: 4px;
-				background-color: black;
-			}
-		</style>
+		div.bar {
+			display: inline-block;
+			width: 30px;
+			height: 70px;
+			background-color: black;
+		}
+	</style>
 </head>
 <body>
     <script>
@@ -77,3 +76,49 @@ div.bar {
 </html>  
 ```
 ####4. Setting CSS style for div using d3.js
+1. The ```style()``` method in d3.js is used to apply a CSS property and value related to a specific HTML element.
+2. The height of a bar in bar chart has to a function of the value in dataset. Below is the sample code
+	* add style for the above chunk of code in d3.js
+	```javascript
+    d3.select("body").selectAll("div")
+	    .data(dataset)
+	    .enter()
+	    .append("div")
+	    .attr("class", "bar")
+	    .style("height", function(d) {
+	    	return d * 20 + "px";
+		});
+	```
+	* The above method does not look so nice. So we need to add margin to make the bar chart look nice. This could be written in CSS style. ```CSS margin-right: 2px;```
+	```HTML
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Learning D3</title>
+	    <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+	    <style type="text/css">
+			div.bar {
+				display: inline-block;
+				width: 30px;
+				height: 70px;
+				background-color: black;
+				margin-right: 4px;
+			}
+		</style>
+	</head>
+	<body>
+	    <script>
+	        var dataset = [1, 2, 3, 4, 5];
+	        d3.select("body").selectAll("div")
+	            .data(dataset)
+	            .enter()
+	            .append("div")
+	            .attr("class", "bar")
+	            .style("height", function(d) {
+	    			return d * 20 + "px";
+				});
+	    </script>
+	</body>
+	</html>  
+	```
