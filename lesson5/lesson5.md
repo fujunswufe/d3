@@ -80,4 +80,13 @@
         </body>
     </html>
     ```
-
+3. The style of SVG
+    1. The default style of SVG is black with no stroke.
+    2. If we want to make our own SVG elements, we have to apply some styles. 
+        1. fill: a color value. It sets the color inside the object. 
+        2. stroke: a color value. It sets the color of the line drawn around the object.
+        3. stroke-width: the stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If 0 is used, the outline will never be drawn. 
+        4. opacity: numeric value between 0.0 (completely transparent) and 1.0 (completely opaque).
+        5. text. The style of text is the same with CSS style. 
+            1. font-size
+            2. font-family
