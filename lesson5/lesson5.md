@@ -2,6 +2,7 @@
 ####How to use the power of data
 1. In lesson 4, we talked about how to draw bar charts with an array of dataset.
 2. Now let's now initialize some dataset randomly and use these data to create a barchart.
+3. You can open the developer tool of Chrome. Type ```console.log(dataset)``` in javascript console. And finally we can see the generalized random numbers. 
 ```html
 <!DOCTYPE html>
 <html lang="en">
