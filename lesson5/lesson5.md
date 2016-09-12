@@ -60,3 +60,23 @@
         </body>
     </html>
     ```
+2. Some simple shapes of SVG element
+    1. There are visual shapes can be included within SVG element. These elements include circle, ellipse, rect, path, line, and text.
+    2. The pixel based coordinate system start from top left corner as ```(0, 0)```. This is different from our math common sense. And sometimes, we have to flip the coordinate to make the elements look normal. 
+```
+<html>
+    <body>
+    
+    <h1>An intro to SVG</h1>
+    
+    <svg width="500" height="500">
+    
+      <circle cx="50" cy="50" r="40" stroke="green"/>
+      <line x1="0" y1="0" x2="500" y2="50" stroke="black"/>
+      
+    </svg>
+    </body>
+</html>
+```
+    3. The first line of code within SVG draws circle. The center of the circle is ```(50, 50)``` and the radius is 40
+    4. The second line of code draws a line and starts from ```(0, 0)``` and ends at ```(500, 50)```.
