@@ -88,5 +88,22 @@
         3. stroke-width: the stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If 0 is used, the outline will never be drawn. 
         4. opacity: numeric value between 0.0 (completely transparent) and 1.0 (completely opaque).
         5. text. The style of text is the same with CSS style. 
-            1. font-size
-            2. font-family
+            * font-size
+            * font-family
+4. There are two methods to apply styles to an SVG element.
+    * directly as an attribute of an element. ```<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />```
+    * Use an CSS style rule
+    ```
+    <circle cx="50" cy="50" r="40" class="yellowCircle" />
+    ```
+    ```CSS
+    .yellowCircle {
+        stroke: green;
+        stroke-width: 4;
+        fill: yellow;
+    }
+    ```
+5. Obviously, the use of an style rule has some benefits. 
+    * it can be applied to many elements
+    * It's easy to maintain and change styles
+    * It's convenient to read than within line attributes
