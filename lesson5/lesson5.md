@@ -40,3 +40,23 @@
 </body>
 </html>
 ```
+####An introduction to SVG
+1. SVG element
+    1. SVG stands for Scalable Vector Graphics.
+    2. SVG defines vector-based graphics in XML format.
+    3. SVG graphics do NOT lose any quality if they are zoomed or resized.
+    4. SVG could be included within HTML element.
+    5. Like other XML based elements, SVG has starting tag and closing tag
+    ```SVG
+    <html>
+        <body>
+        
+        <h1>An intro to SVG</h1>
+        
+        <svg width="100" height="100"> // width and height both define the space of an SVG element. the default of the unit is pixels.
+          <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+        
+        </body>
+    </html>
+    ```
