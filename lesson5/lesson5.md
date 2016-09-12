@@ -2,7 +2,7 @@
 ####How to use the power of data
 1. In lesson 4, we talked about how to draw bar charts with an array of dataset.
 2. Now let's now initialize some dataset randomly and use these data to create a barchart.
-```javascript
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +38,4 @@
     </script>
 </body>
 </html>
-
-
 ```
