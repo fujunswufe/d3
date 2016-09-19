@@ -121,7 +121,7 @@
         })
         .attr("y", function(d) {
             return h - d * 3;
-        })
+        }) 
         .attr("width", w / dataset.length - padding)
         .attr("height", function(d) {
             return d * 3; 
@@ -131,4 +131,20 @@
         });
     ```
 
-2. label
+2. Label. This looks like similar with "rect".
+```Javascript
+svg.selectAll("text")
+	.data(dataset)
+	.enter()
+	.append("text")
+	.text(function(d) {
+	    return d;
+	})
+	.attr("x", function(d, i) {
+	
+	    <!--return i * (w / dataset.length) + (w / dataset.length - padding) / 2;-->
+	})
+	.attr("y", function(d) {
+	    return h - 3 * d + 10;
+	});
+```
