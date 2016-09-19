@@ -131,20 +131,77 @@
         });
     ```
 
-2. Label. This looks like similar with "rect".
+2. Label. Sometimes, we need to add data values as text within the visualization object to make the visualization more vivid. This looks like similar with "rect".
 ```Javascript
-svg.selectAll("text")
+svg.selectAll("text") // this would return empty, right now there isn't any text inside svg
 	.data(dataset)
-	.enter()
-	.append("text")
-	.text(function(d) {
+	.enter() // this will create a placeholder
+	.append("text") // add text for the placeholder
+	.text(function(d) { // the text would be the data value
 	    return d;
 	})
-	.attr("x", function(d, i) {
-	
-	    <!--return i * (w / dataset.length) + (w / dataset.length - padding) / 2;-->
+	.attr("x", function(d, i) { // i * (w / dataset.length) is the x coordinate for each bar, we just add some space for text
+		return i * (w / dataset.length) + 5;
 	})
-	.attr("y", function(d) {
+	.attr("y", function(d) { //h - 3 * d is the y coordinate for each bar, so the y coordinate for text will add 10 pixels on that.  
 	    return h - 3 * d + 10;
-	});
+	})
+	.attr("font-family", "sans-serif")
+	.attr("font-size", "11px") // size
+	.attr("fill", "white"); // color of the text
 ```
+3. Here is the finished code. You can create a html file and copy the following code. And open the html file with localhost.
+    ```HTML
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Learning D3</title>
+        <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+    <body>
+        <script>
+            var dataset = [5, 10, 15, 20, 25, 12, 8, 17, 22, 7, 27, 30, 13, 11, 19, 20, 29, 33, 31, 22];
+            var padding = 2;
+            var w = 500;
+            var h = 100;
+            var svg = d3.select("body")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+            
+            svg.selectAll("rect")
+                .data(dataset)
+                .enter()
+                .append("rect")
+                .attr("x", function(d, i) {
+                    return i * (w / dataset.length);
+                })
+                .attr("y", function(d) {
+                    return h - d * 3; // we want to make the y coordinate start at h - d * 3
+                })
+                .attr("width", w / dataset.length - padding)
+                .attr("height", function(d) {
+                    return d * 3; // Because the y coordinate starts at h - d * 3, the height will be d * 3. Please make sure that d * 3 is smaller than the height of the whole SVG
+                });
+            
+            svg.selectAll("text") // this would return empty, right now there isn't any text inside svg
+				.data(dataset)
+				.enter()
+				.append("text")
+				.text(function(d) { 
+				    return d;
+				})
+				.attr("x", function(d, i) { 
+					return i * (w / dataset.length) + 5;
+				})
+				.attr("y", function(d) { 
+				    return h - 3 * d + 10;
+				})
+				.attr("font-family", "sans-serif")
+				.attr("font-size", "11px") // size
+				.attr("fill", "white"); 
+        </script>
+    </body>
+    </html> 
+	```
