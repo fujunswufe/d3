@@ -109,3 +109,26 @@
     </body>
     </html> 
     ```
+####Add colors and labels to bar chart
+1. Color. We want to change the black bar chart to other colors, and the shape's color would reflect the corresponding data value. So, if the value is bigger, it will show deep blud bar, otherwise, light blue bar.
+    ```Javascript
+    svg.selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("x", function(d, i) {
+            return i * (w / dataset.length);
+        })
+        .attr("y", function(d) {
+            return h - d * 3;
+        })
+        .attr("width", w / dataset.length - padding)
+        .attr("height", function(d) {
+            return d * 3; 
+        })
+        .attr("fill", function(d) {
+            return "rgb(0, 0, " + (d * 5) + ")";
+        });
+    ```
+
+2. label
