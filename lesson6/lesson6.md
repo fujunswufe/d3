@@ -183,7 +183,10 @@ svg.selectAll("text") // this would return empty, right now there isn't any text
                 .attr("width", w / dataset.length - padding)
                 .attr("height", function(d) {
                     return d * 3; 
-                });
+                })
+                .attr("fill", function(d) {
+            return "rgb(0, 0, " + (d * 5) + ")";
+        		});
             
             svg.selectAll("text") 
 				.data(dataset)
