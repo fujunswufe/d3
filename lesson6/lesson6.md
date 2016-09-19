@@ -1,4 +1,5 @@
 ###Lesson 6 Make a simple bar chart using d3.js
+####Old chart of div
 1. In lesson 4, we attempted to make a bar chart using ```div```. However, ```div``` has some limitations compared to ```SVG```. Here is the following code.
 ```HTML
 <!DOCTYPE html>
@@ -32,8 +33,9 @@
 </body>
 </html>  
 ```
-2. In this lesson, I would write the details for how to make a bar chart using step by step. 
-    1. First, we need to create an empty ```SVG``` with defined height and width, and add it to the DOM. The newly create emtpy SVG is in body.
+####New chart of svg
+2. In this lesson, I would write the details for how to make a bar chart using svg step by step. 
+    * First, we need to create an empty ```SVG``` with defined height and width, and add it to the DOM. The newly create emtpy SVG is in body.
     ```Javascript
     var w = 500; // predefined width
     var h = 100; // predefined height
@@ -42,7 +44,7 @@
                 .attr("width", w)
                 .attr("height", h);
     ```
-    2. dddd
+    * Instead of using div, we create ```rect``` and add each of them 
 
 ```HTML
 <!DOCTYPE html>
