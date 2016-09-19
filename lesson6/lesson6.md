@@ -57,7 +57,7 @@
         .attr("width", 20)
         .attr("height", 100);
     ```
-    * For improvement. Remember that the (0,0) of SVG is the upper-left corner. So we need to flip the (0, 0) coordinate to lower-left corner. And for x coordinate, we will assign a dynamic value related to index of the data and the overall svg's width
+    * For improvement. Remember that the (0,0) of SVG is the upper-left corner. So we need to flip the (0, 0) coordinate to lower-left corner. And for x coordinate, we will assign a dynamic value related to index of the data and the svg's width
     ```Javascript
     svg.selectAll("rect")
         .data(dataset)
@@ -112,7 +112,7 @@
     </html> 
     ```
 ####Add colors and labels to bar chart
-1. Color. We want to change the black bar chart to other colors, and the shape's color would reflect the corresponding data value. So, if the value is bigger, it will show deep blud bar, otherwise, light blue bar.
+1. Color. We want to change the black bar chart to other colors, and the shape's color would reflect the corresponding data value. So, if the value is bigger, it will show deep color bar, otherwise, light color bar.
     ```Javascript
     svg.selectAll("rect")
         .data(dataset)
@@ -152,6 +152,7 @@ svg.selectAll("text") // this would return empty, right now there isn't any text
 	.attr("font-size", "11px") // size
 	.attr("fill", "white"); // color of the text
 ```
+
 3. Here is the finished code. You can create a html file and copy the following code. And open the html file with localhost.
     ```HTML
     <!DOCTYPE html>
