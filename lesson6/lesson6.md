@@ -178,14 +178,14 @@ svg.selectAll("text") // this would return empty, right now there isn't any text
                     return i * (w / dataset.length);
                 })
                 .attr("y", function(d) {
-                    return h - d * 3; // we want to make the y coordinate start at h - d * 3
+                    return h - d * 3; 
                 })
                 .attr("width", w / dataset.length - padding)
                 .attr("height", function(d) {
-                    return d * 3; // Because the y coordinate starts at h - d * 3, the height will be d * 3. Please make sure that d * 3 is smaller than the height of the whole SVG
+                    return d * 3; 
                 });
             
-            svg.selectAll("text") // this would return empty, right now there isn't any text inside svg
+            svg.selectAll("text") 
 				.data(dataset)
 				.enter()
 				.append("text")
