@@ -44,7 +44,34 @@
                 .attr("width", w)
                 .attr("height", h);
     ```
-    * Instead of using div, we create ```rect``` and add each of them 
+    * Instead of using div, we create ```rect``` and add each of them. Every rect has its coordinate (x, y) and corresponding width and height.
+    ```Javascript
+    svg.selectAll("rect") // select all rect inside SVG. However, there isn't any rect, empty object will be returned. 
+        .data(dataset) // the dataset has 20 data points
+        .enter() // enter() will be called 20 times, this will return a place holder section for each of rect
+        .append("rect") // for each of the place holder, this will add a rect and add it to DOM.
+        .attr("x", 0) // each of the rect's x coordinate would be 0. This will create overlapping bars, we will improve it later
+        .attr("y", 0) // each of the rect's y coordinate would be 0
+        .attr("width", 20)
+        .attr("height", 100);
+    ```
+    * For improvement. Remember that the (0,0) of SVG is the upper-left corner. So we need to flip the (0, 0) coordinate to lower-left corner. And for x coordinate, we will assign a dynamic value related to index of the data and the overall svg's width
+    ```Javascript
+    svg.selectAll("rect")
+        .data(dataset)
+        .enter()
+        .attr("x", function(d, i) { // i is the index of each value in dataset
+            return i * (w / dataset.length);
+        })
+        .attr("y", function(d) {
+            return h - d; // for each bar's y coordinate, it will start at h - d
+        })
+        .attr("width", w / dataset.length - padding) // minus padding means that we need to leave some space between bars
+        .attr("height", function(d){
+            return d; // Although, each bar will look like a little short
+        });
+    ```
+    
 
 ```HTML
 <!DOCTYPE html>
@@ -73,13 +100,11 @@
                 return i * (w / dataset.length);
             })
             .attr("y", function(d) {
-                return h - d * 3;
+                return h - d * 3; // we want to make the y coordinate start at h - d * 3
             })
-            .attr("width", function(d) {
-                return w / dataset.length - padding;
-            })
+            .attr("width", w / dataset.length - padding)
             .attr("height", function(d) {
-                return d * 3; // times three
+                return d * 3; // Because the y coordinate starts at h - d * 3, the height will be d * 3. Please make sure that d * 3 is smaller than the height of the whole SVG
             });
     </script>
 </body>
