@@ -35,8 +35,8 @@ var datapoints = [[5, 20],  // we separate each array by commas
   <body>
       <script>
         var datapoints = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12]];
-        var w = 250;
-        var h = 250;
+        var w = 600;
+        var h = 600;
         var svg = d3.select("body")
                     .append("svg")
                     .attr("width", w)
@@ -100,8 +100,8 @@ svg.selectAll("text")
   <body>
       <script>
         var datapoints = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12]];
-        var w = 250;
-        var h = 250;
+        var w = 600;
+        var h = 600;
         var svg = d3.select("body")
                     .append("svg")
                     .attr("width", w)
