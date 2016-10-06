@@ -39,8 +39,8 @@ var datapoints = [[5, 20],  // we separate each array by commas
         var h = 250;
         var svg = d3.select("body")
                     .append("svg")
-                    .("width", w)
-                    .("height", h);
+                    .attr("width", w)
+                    .attr("height", h);
 
         svg.selectAll("circle")
             .data(datapoints)
@@ -104,8 +104,8 @@ svg.selectAll("text")
         var h = 250;
         var svg = d3.select("body")
                     .append("svg")
-                    .("width", w)
-                    .("height", h);
+                    .attr("width", w)
+                    .attr("height", h);
 
         svg.selectAll("circle")
             .data(datapoints)
