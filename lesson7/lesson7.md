@@ -80,7 +80,7 @@ svg.selectAll("text")
 ```
 
 3. Add the code from above to create a new HTML file. You can open it chrome and try to make your scatter plot.
-```
+```HTML
   <!DOCTYPE html>
   <html lang="en">
   <head>
