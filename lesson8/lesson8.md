@@ -15,6 +15,8 @@ var dataset = [200, 300, 500, 700, 900];
 4. If we set the output range between 10 and 50. If we input value 200 to scale, it will return 10 and input value 900 to scale, it will return 900. 
 
 ####Normalization
+1. Normalization is the process of transforming a numeric to a new one between 0 and 1, based on the input values, mainly minimum and maximum. 
+2. For example, ```var dataset = [10, 44, 33, 99, 100, 39, 77, 13]```. 10 would map to 0.1 and 33 would map to 0.33. This is one kind of linear scales. 
 
 ####Creating a Scale
 
