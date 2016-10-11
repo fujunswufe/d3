@@ -35,6 +35,7 @@ scale(500);
 ####Scaling the Scatterplot
 1. First we need to find two maximums corresponding to x-axis and y-axis.
 2. Create two scale functions for x-axis and y-axis. For the var name, use whatever you want. However, these names should have some meaning for remember. 
+3. For those you guys who don't understand why we use ```xMax + 50``` and ```yMax + 50```. This is because that we want to add some flexibility. 
 
 ```Javascript
 var w = 200;
@@ -52,6 +53,85 @@ var yScale = d3.scale()
                 .linear()
                 .domain([0, yMax + 50])
                 .range([0, h]);
+                
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+svg.selectAll("circle")
+        .data(datapoints)
+        .enter()
+        .append("circle")
+        .attr("cx", function(d) {
+            return xScale(d[0]);  
+        })
+        .attr("cy", function(d) {
+            return yScale(d[1]);
+        })
+        .attr("r", 5); 
+```
+
+
+```
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Learning D3</title>
+      <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+      <style type="text/css">
+          div.bar {
+              display: inline-block;
+              width: 30px;
+              height: 70px;
+              background-color: black;
+              margin-right: 4px;
+          }
+      </style>
+  </head>
+  <body>
+      <script>
+        var datapoints = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12]];
+        var w = 200;
+        var h = 300;
+        
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+
+        svg.selectAll("circle")
+            .data(datapoints)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d) { // cx and cy are the coordinates of the circle
+                return d[0];  
+            })
+            .attr("cy", function(d) {
+                return d[1];
+            })
+            .attr("r", 5); // r is the length of radius
+
+            svg.selectAll("text")
+              .data(datapoints)
+              .enter()
+              .append("text")
+              .text(function(d) {
+                return d[0] + "," + d[1]; // "+" is like an append operator
+              })
+              .attr("x", function(d) { // coordinate for x axis
+                return d[0];
+              })
+              .attr("y", function(d) { // coordinate for y axis
+                return d[1];
+              })
+              .attr("font-family", "sans-serif") // add some font style for the text
+              .attr("font-size", "10px")
+              .attr("fill", "blue");
+      </script>
+  </body>
+  </html> 
 ```
 
 ####Refining the Plot
