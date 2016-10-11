@@ -38,80 +38,104 @@ scale(500);
 3. For those you guys who don't understand why we use ```xMax + 50``` and ```yMax + 50```. This is because that we want to add some flexibility. 
 4. Try to read the code below, especially the code between ```<script>``` and ```</script>```.
 
-```HTML
-<!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <title>Learning D3</title>
-      <script  type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-      <style type="text/css">
-          div.bar {
-              display: inline-block;
-              width: 30px;
-              height: 70px;
-              background-color: black;
-              margin-right: 4px;
-          }
-      </style>
-  </head>
-  <body>
-      <script>
-        var dataset = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12]];
-        var w = 200;
-        var h = 300;
+```Javascript
 
-        // remember the first element of a coordinate array is x-axis and second element is y-axis
-        var xMax = d3.max(dataset, function(d) {return d[0];});
-        var yMax = d3.max(dataset, function(d) {return d[1];});
+var dataset = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12]];
+var w = 200;
+var h = 300;
 
-        var svg = d3.select("body")
-                    .append("svg")
-                    .attr("width", w)
-                    .attr("height", h);
+// remember the first element of a coordinate array is x-axis and second element is y-axis
+var xMax = d3.max(dataset, function(d) {return d[0];});
+var yMax = d3.max(dataset, function(d) {return d[1];});
 
-        var xScale = d3.scaleLinear()                        
-                        .domain([0, xMax + 50])
-                        .range([0, w]);
-        var yScale = d3.scaleLinear()        
-                        .domain([0, yMax + 50])
-                        .range([0, h]);
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
 
-        svg.selectAll("circle")
-          .data(dataset)
-          .enter()
-          .append("circle")
-          .attr("cx", function(d) {
-              return xScale(d[0]);  
-          })
-          .attr("cy", function(d) {
-              return yScale(d[1]);
-          })
-          .attr("r", 5); 
+var xScale = d3.scaleLinear()                        
+                .domain([0, xMax + 50])
+                .range([0, w]);
+var yScale = d3.scaleLinear()        
+                .domain([0, yMax + 50])
+                .range([0, h]);
 
-        svg.selectAll("text")
-          .data(dataset)
-          .enter()
-          .append("text")
-          .text(function(d) {
-            return d[0] + "," + d[1]; // "+" is like an append operator
-          })
-          .attr("x", function(d) { // coordinate for x axis
-            return xScale(d[0]);
-          })
-          .attr("y", function(d) { // coordinate for y axis
-            return yScale(d[1]);
-          })
-          .attr("font-family", "sans-serif") // add some font style for the text
-          .attr("font-size", "10px")
-          .attr("fill", "blue");
-  </script>
-  </body>
-  </html> 
+svg.selectAll("circle")
+  .data(dataset)
+  .enter()
+  .append("circle")
+  .attr("cx", function(d) {
+      return xScale(d[0]);  
+  })
+  .attr("cy", function(d) {
+      return yScale(d[1]);
+  })
+  .attr("r", 5); 
+
+svg.selectAll("text")
+  .data(dataset)
+  .enter()
+  .append("text")
+  .text(function(d) {
+    return d[0] + "," + d[1]; // "+" is like an append operator
+  })
+  .attr("x", function(d) { // coordinate for x axis
+    return xScale(d[0]);
+  })
+  .attr("y", function(d) { // coordinate for y axis
+    return yScale(d[1]);
+  })
+  .attr("font-family", "sans-serif") // add some font style for the text
+  .attr("font-size", "10px")
+  .attr("fill", "blue");
 ```         
- 
-  
- 
+
 ####Refining the Plot
+1. We want to refine the coordinate of the plot. It it because that this coordinate system starts at top left corner. Thus, larger y values are towards the bottom and smaller y values are at the top.
+2. Reversing the coordinate is super easy for d3. We just need to reverse the output range, from ```range([h, 0])``` to ```range([0,h])```.
+
+```Javascript
+var yScale = d3.scaleLinear()        
+              .domain([0, yMax + 50])
+              .range([h, 0]);
+```
+3. For some of the text may be cut off. And we can use ```padding``` to solve this problem. This could provide us with 20 pixels of extra space on the left, right, top, and bottom edges of an SVG
+
+```Javascript
+var padding = 20;
+
+var xScale = d3.scaleLinear()
+               .domain([0, xMax + 50])
+               .range([padding, w - padding]);
+
+var yScale = d3.scaleLinear()
+               .domain([0, yMax + 50])
+               .range(h - padding, padding);
+```
+4. Refine the radius to length between 1 and 5. 
+```Javascript
+var rScale = d3.scaleLinear()
+               .domain([0, yMax + 50])
+               .range([1, 5]);
+               
+// the scale of radius should be something like 
+
+.attr("r", function(d) {
+  return rScale(d[1]);
+})
+```
 
 ####Other Methods and Scales. 
+1. This is a [API Reference](https://github.com/d3/d3-scale) for d3 scales
+2. Different tyle of scales
+    * Continuous (Linear, Power, Log, Identity, Time)
+    * Sequential
+    * Quantize
+    * Quantile
+    * Threshold
+    * Ordinal (Band, Point, Category)
+
+
+####Final Code
+
+
