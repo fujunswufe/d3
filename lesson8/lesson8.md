@@ -19,6 +19,18 @@ var dataset = [200, 300, 500, 700, 900];
 2. For example, ```var dataset = [10, 44, 33, 99, 100, 39, 77, 13]```. 10 would map to 0.1 and 33 would map to 0.33. This is one kind of linear scales. 
 
 ####Creating a Scale
+1. First, we need to use d3 to call ```scale``` function
+2. Second, use whatever scale method you want. In this case, we use ```linear``` scale. 
+3. Set domain and range.
+4. Try to write your own scale funtions and find out the results.
+```Javascript
+var scale = d3.scale()
+              .linear()
+              .domain([200, 900])
+              .range([10, 50]);
+scale(300); // find out the results by yourself.
+scale(500);
+```
 
 ####Scaling the Scatterplot
 
