@@ -36,6 +36,7 @@ scale(500);
 1. First we need to find two maximums corresponding to x-axis and y-axis.
 2. Create two scale functions for x-axis and y-axis. For the var name, use whatever you want. However, these names should have some meaning for remember. 
 3. For those you guys who don't understand why we use ```xMax + 50``` and ```yMax + 50```. This is because that we want to add some flexibility. 
+4. Try to read the code below, especially the code between ```<script>``` and ```</script>```.
 
 ```HTML
 <!DOCTYPE html>
