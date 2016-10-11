@@ -12,6 +12,7 @@ var dataset = [200, 300, 500, 700, 900];
 1. Domains are for __input__ and ranges are for __output__. 
 2. The input domain is the range of possible input data values. For example, the input domain would be 200 and 500 (the minimum value of maximum value of input) or 0 and 500.
 3. The output range is the range of possible output values. It is normally used as display values in pixel units. Unlike the input domain, we could set the output range by ourself depending on the size of the display. For example, we could set range between 10 and and 50. 
+4. If we set the output range between 10 and 50. If we input value 200 to scale, it will return 10 and input value 900 to scale, it will return 900. 
 
 ####Normalization
 
