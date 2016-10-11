@@ -33,6 +33,26 @@ scale(500);
 ```
 
 ####Scaling the Scatterplot
+1. First we need to find two maximums corresponding to x-axis and y-axis.
+2. Create two scale functions for x-axis and y-axis. For the var name, use whatever you want. However, these names should have some meaning for remember. 
+
+```Javascript
+var w = 200;
+var h = 300;
+var dataset = [[5, 20], [480, 90], [250, 50], [100, 33], [330, 95], [410, 12]];
+// remember the first element of a coordinate array is x-axis and second element is y-axis
+var xMax = d3.max(dataset, function(d) {return d[0];});
+var yMax = d3.max(dataset, function(d) {return d[1];});
+
+var xScale = d3.scale()
+                .linear()
+                .domain([0, xMax + 50])
+                .range([0, w]);
+var yScale = d3.scale()
+                .linear()
+                .domain([0, yMax + 50])
+                .range([0, h]);
+```
 
 ####Refining the Plot
 
