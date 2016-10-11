@@ -1,4 +1,4 @@
-###Lesson 8
+###Lesson 8 Scales of D3
 1. Sometimes, the input datasets are unlikely to correspond exactly to pixel measurements for visualization. 
 2. d3 has scale functions. In this lesson, we only talk about linear scale function, which is much common. Once a d3 object is created, you call the scale function, pass it a data value, and it will return a scaled output value. 
 
