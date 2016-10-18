@@ -78,8 +78,11 @@
           .attr("font-family", "sans-serif") // add some font style for the text
           .attr("font-size", "10px")
           .attr("fill", "blue");
-        svg.append("g")
-           .call(xAxis);
+
+          svg.append("g")
+             .attr("class", "axis")
+             .attr("transform", "translate(0, " + (h - padding) + ")")
+             .call(xAxis);
   </script>
   </body>
   </html> 
